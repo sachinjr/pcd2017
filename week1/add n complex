@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<math.h>
+struct complex{
+                    float real;
+                    float imaginary;
+              };
+
+struct complex getnum()
+              { 
+                   struct complex c;
+                   printf("Enter the real and imaginary part of the complex number:");
+                   scanf("%f%f",&c.real,&c.imaginary);
+                   return c;
+              }
+void print(int a)
+              {
+                   struct complex c = {0,0};
+                   struct complex x[a];
+                   for(int i=0;i<a;i++)
+                                 {
+                                    x[i]=getnum();
+                                 }
+                   for(int i=0;i<a;i++)
+                                 {
+                                    c.real += x[i].real;
+                                    c.imaginary += x[i].imaginary; 
+                                  }
+                   printf("%f+%fi",c.real,c.imaginary);
+
+               }
+
+int main()
+               {
+                   int a;
+                   printf("How many complex numbers do you want to add : \n");
+                   scanf("%d",&a);
+                   print(a);
+                   return 0;
+
+                }
